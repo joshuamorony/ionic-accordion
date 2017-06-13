@@ -6,9 +6,20 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+
+	<ion-list>
+	  <button detail-none (click)="expandItem(item)" ion-item *ngFor="let item of items">
+	    <ion-thumbnail item-start>
+	      <img src="http://placehold.it/100">
+	    </ion-thumbnail>
+	    <h2>My Neighbor Totoro</h2>
+	    <p>Hayao Miyazaki • 1988</p>
+		<expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
+			Hello people
+		</expandable>
+	    <button ion-button clear item-end>View</button>
+	  </button>
+	</ion-list>
+
 </ion-content>
